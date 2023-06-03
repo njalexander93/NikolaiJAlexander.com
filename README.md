@@ -6,16 +6,30 @@ This repository contains the source code for the https://www.nikolaijalexandder.
 - [NikolaiJAlexander.com](#nikolaijalexandercom)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
+  - [Requirements](#requirements)
   - [Installation](#installation)
+    - [Unix/Linux](#unixlinux)
+    - [Windows](#windows)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
 
 ## Overview
 The NikolaiJAlexander.com website is built using the Django web framework. It includes various pages and features for presenting the portfolio and projects of Nikolai Alexander.
+## Requirements
+
+Before running this project, make sure you have the following requirements installed:
+
+- Python 3.10
+- Django 4.2.1
+- Other dependencies listed in the `requirements.txt` file
+
+To install the required dependencies, you can use pip:
 
 ## Installation
 To run the NikolaiJAlexander.com website locally, follow these steps:
+
+### Unix/Linux
 
 1. Clone the repository:
 ```shell
@@ -30,7 +44,35 @@ source myenv/bin/activate
 
 3. Install the project dependencies:
 ```shell
-Copy code
+cd NikolaiJAlexander.com
+pip install -r requirements.txt
+```
+
+1. Perform initial database migrations:
+```shell
+python manage.py migrate
+```
+
+1. Run the development server:
+```shell
+python manage.py runserver
+```
+The website will be accessible at http://localhost:8000/.
+
+### Windows
+1. Clone the repository:
+```shell
+git clone https://github.com/njalexander93/NikolaiJAlexander.com.git
+```
+
+2. Create and activate a virtual environment:
+```shell
+python -m venv myenv
+myenv\Scripts\activate
+```
+
+3. Install the project dependencies:
+```shell
 cd NikolaiJAlexander.com
 pip install -r requirements.txt
 ```
@@ -42,9 +84,10 @@ python manage.py migrate
 
 5. Run the development server:
 ```shell
-python manage.py runserver
+python manage.py migrate
 ```
-The website will be accessible at http://localhost:8000/.
+
+The website will be accessible at http://localhost:8000
 
 ## Usage
 To use the NikolaiJAlexander.com website locally, follow these steps:
