@@ -1,0 +1,30 @@
+# Ignore Python-related files
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Ignore Django-related files
+*.sqlite3
+*.env
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment files
+venv/
+env/
+*env/
+*.venv/
+.venv/
