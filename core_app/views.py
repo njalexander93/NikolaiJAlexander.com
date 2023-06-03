@@ -18,7 +18,7 @@ __author__ = "Nikolai Alexander"
 __email__ = "njalexander93@gmail.com"
 __version__ = "1.0.0"
 __date__ = "2023-06-03"
-__license__ = "None"
+__license__ = "CC BY-ND 4.0"
 __copyright__ = "Copyright (c) 2021 Nikolai Alexander"
 
 
