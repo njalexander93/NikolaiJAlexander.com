@@ -22,7 +22,7 @@ Before running this project, make sure you have the following requirements insta
 
 - Python 3.10
 - Django 4.2.1
-- Other dependencies listed in the `requirements.txt` file
+- Other dependencies listed in the [requirements.txt](requirements.txt) file
 
 To install the required dependencies, you can use pip:
 
