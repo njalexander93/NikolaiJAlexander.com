@@ -1,6 +1,6 @@
 # NikolaiJAlexander.com
 
-This repository contains the source code for the NikolaiJAlexander.com website, which showcases my work experience, projects and portfolio.
+This repository contains the source code for the https://www.nikolaijalexandder.com website, which showcases my work experience, projects and portfolio.
 
 ## Table of Contents
 - [NikolaiJAlexander.com](#nikolaijalexandercom)
