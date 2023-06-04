@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+{% comment %}
+Base template for the core app.
+
+This template contains the base html that is shown on the website. All other templates within the core_app inherit from
+this template.
+
+Typical Usage Example:
+   1. Create a new template that extends 'base.html' like this:
+        {% extends 'base.html' %}
+        {% block title %}Home{% endblock %}
+        {% block content %}
+            <h1>Welcome to My Website!</h1>
+            <p>This is the home page content.</p>
+        {% endblock %}
+{% endcomment %}
+
+<head>
+    {% block versioning %}
+        <meta name="author" content="Nikolai Alexander">
+        <meta name="email" content="njalexander93@gmail.com">
+        <meta name="version" content="1.0.0">
+        <meta name="date" content="2023-06-04">
+        <meta name="license" content="CC BY-ND 4.0">
+        <meta name="copyright" content="Copyright (c) 2023 Nikolai Alexander">
+    {% endblock %}
+
+    {% load static %}
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    <div class="content">
+        {% block content %}
+        {% comment %} Content specific to child templates {% endcomment %}
+        {% endblock %}
+    </div>
+</body>
+</html>

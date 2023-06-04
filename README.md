@@ -48,12 +48,31 @@ cd NikolaiJAlexander.com
 pip install -r requirements.txt
 ```
 
-1. Perform initial database migrations:
+4. Perform initial database migrations:
 ```shell
 python manage.py migrate
 ```
 
-1. Run the development server:
+5. Install Sass (if not already installed):
+   - For Debian/Ubuntu-based systems:
+     ```shell
+     sudo apt update
+     sudo apt install ruby-full
+     sudo gem install sass
+     ```
+   - For RedHat-based systems:
+     ```shell
+     sudo yum install ruby
+     gem install sass
+     ```
+   - For macOS systems:
+     ```shell
+     gem install sass
+     ```
+       - macOS comes with a re-installed version of sass. If not, you can install it with Homebrew.
+   - For other Unix/Linux distributions, follow the appropriate installation instructions for your package manager or refer to the Sass documentation.
+
+6. Run the development server:
 ```shell
 python manage.py runserver
 ```
@@ -82,7 +101,15 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-5. Run the development server:
+5. Install Sass (if not already installed):
+   - Install Ruby: Sass requires Ruby to be installed on Windows. Download the Ruby installer for Windows from the RubyInstaller website (https://rubyinstaller.org/) and follow the installation instructions.
+   - Add Ruby to the system PATH during the installation.
+   - Open a command prompt and compile Sass files. i.e.
+      ```batch
+      sass core_app/static/css/_colorpallet.scss core_app/static/css/base.css
+      ```
+
+6. Run the development server:
 ```shell
 python manage.py migrate
 ```
