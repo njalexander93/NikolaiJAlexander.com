@@ -21,6 +21,7 @@ The NikolaiJAlexander.com website is built using the Django web framework. It in
 Before running this project, make sure you have the following requirements installed:
 
 - Python 3.10
+- Ruby Sass 3.7.4
 - Django 4.2.1
 - Other dependencies listed in the [requirements.txt](requirements.txt) file
 
