@@ -21,8 +21,9 @@ The NikolaiJAlexander.com website is built using the Django web framework. It in
 Before running this project, make sure you have the following requirements installed:
 
 - Python 3.10
-- Ruby Sass 3.7.4
 - Django 4.2.1
+- npm 8.19.4
+- node-sass 9.0.0
 - Other dependencies listed in the [requirements.txt](requirements.txt) file
 
 To install the required dependencies, you can use pip:
@@ -54,26 +55,33 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-5. Install Sass (if not already installed):
-   - For Debian/Ubuntu-based systems:
-     ```shell
-     sudo apt update
-     sudo apt install ruby-full
-     sudo gem install sass
-     ```
-   - For RedHat-based systems:
-     ```shell
-     sudo yum install ruby
-     gem install sass
-     ```
-   - For macOS systems:
-     ```shell
-     gem install sass
-     ```
-       - macOS comes with a re-installed version of sass. If not, you can install it with Homebrew.
-   - For other Unix/Linux distributions, follow the appropriate installation instructions for your package manager or refer to the Sass documentation.
+5. Install Node.js and npm:
+  - For Debian/Ubuntu-based systems:
+    ```shell
+    sudo apt update
+    sudo apt install nodejs npm
+    ```
+  - For RedHat/Fedora-based systems:
+    ```shell
+    sudo dnf update
+    sudo dnf install nodejs npm
+    ```
+  - For macOS systems:
+    ```shell
+    brew install node
+    ```
 
-6. Run the development server:
+6. Install node-sass:
+```shell
+sudo npm install -g node-sass
+```
+
+7. Build the CSS files:
+```shell
+npm run build-css
+```
+
+8.  Run the development server:
 ```shell
 python manage.py runserver
 ```
@@ -102,15 +110,16 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-5. Install Sass (if not already installed):
-   - Install Ruby: Sass requires Ruby to be installed on Windows. Download the Ruby installer for Windows from the RubyInstaller website (https://rubyinstaller.org/) and follow the installation instructions.
-   - Add Ruby to the system PATH during the installation.
-   - Open a command prompt and compile Sass files. i.e.
-      ```batch
-      sass core_app/static/css/_colorpallet.scss core_app/static/css/base.css
-      ```
+5. Install Node.js and npm:
+   - Download the Windows installer for Node.js from the official website: https://nodejs.org/en/download/
+   - Run the installer and follow the installation instructions.
 
-6. Run the development server:
+6. Install node-sass:
+```shell
+npm install -g node-sass
+```
+
+7. Run the development server:
 ```shell
 python manage.py migrate
 ```

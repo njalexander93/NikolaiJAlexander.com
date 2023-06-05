@@ -3,9 +3,13 @@
     "version": "1.0.0",
     "description": "This is a website for hosting my resume.",
     "scripts": {
-        "build-css": "node-sass core_app/static/css/base.scss && node-sass core_app/static/css/index.scss && node-sass core_app/static/css/navbar.scss -o core_app/static/css"
+      "build-base-css": "node-sass core_app/static/scss/base.scss core_app/static/css/base.css",
+      "build-index-css": "node-sass core_app/static/scss/index.scss core_app/static/css/index.css",
+      "build-navbar-css": "node-sass core_app/static/scss/navbar.scss core_app/static/css/navbar.css",
+      "build-core-css": "npm run build-base-css && npm run build-index-css && npm run build-navbar-css",
+      "build-css": "npm run build-core-css"
     },
     "devDependencies": {
-        "node-sass": "^9.0.0"
+      "node-sass": "^9.0.0"
     }
-}
+  }

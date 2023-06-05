@@ -29,6 +29,7 @@ env/
 *.venv/
 .venv/
 
-# Ignore npm packages
+# Ignore npm packages related to the scss files
 node_modules/
 package-lock.json
+**/css/
