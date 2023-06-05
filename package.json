@@ -1,0 +1,11 @@
+{
+    "name": "NikolaiJAlexander.com",
+    "version": "1.0.0",
+    "description": "This is a website for hosting my resume.",
+    "scripts": {
+        "build-css": "node-sass core_app/static/css/base.scss && node-sass core_app/static/css/index.scss && node-sass core_app/static/css/navbar.scss -o core_app/static/css"
+    },
+    "devDependencies": {
+        "node-sass": "^9.0.0"
+    }
+}

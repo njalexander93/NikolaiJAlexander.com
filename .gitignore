@@ -28,3 +28,7 @@ env/
 *env/
 *.venv/
 .venv/
+
+# Ignore npm packages
+node_modules/
+package-lock.json
