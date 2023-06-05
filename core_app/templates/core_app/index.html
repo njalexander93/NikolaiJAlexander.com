@@ -1,0 +1,18 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+    Nikolai J. Alexander
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="index-wrapper">
+        <div class="professional-photo-container">
+            <img src="{% static 'images/professional_photo.png' %}" alt="Professional Photo">
+        </div>
+    </div>
+{% endblock %}

@@ -48,6 +48,7 @@ class HomeView(View):
             None.
         """
         super().__init__()
+        self.template_name = 'core_app/index.html'
 
 
     def get(self, request: HttpRequest) -> HttpResponse:
@@ -62,4 +63,4 @@ class HomeView(View):
         Raises:
             None.
         """
-        return render(request, 'index.html')
+        return render(request, self.template_name)

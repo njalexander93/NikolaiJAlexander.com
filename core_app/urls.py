@@ -7,7 +7,7 @@ Typical Usage Examples:
     1. Include the core_app URLconf in your project urls.py like this::
         path('', include('core_app.urls'))
 """
-from .views import HomeView
+from core_app import views
 from django.urls import path
 
 
@@ -18,7 +18,8 @@ __date__ = "2023-06-03"
 __license__ = "CC BY-ND 4.0"
 __copyright__ = "Copyright (c) 2023 Nikolai Alexander"
 
+app_name = 'core_app'
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'), # URL pattern for the home page
+    path('', views.HomeView.as_view(), name='home'), # URL pattern for the home page
 ]

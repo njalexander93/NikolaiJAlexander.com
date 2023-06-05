@@ -18,6 +18,8 @@ Typical Usage Example:
 {% endcomment %}
 
 <head>
+    {% load static %}
+
     {% block versioning %}
         <meta name="author" content="Nikolai Alexander">
         <meta name="email" content="njalexander93@gmail.com">
@@ -27,14 +29,14 @@ Typical Usage Example:
         <meta name="copyright" content="Copyright (c) 2023 Nikolai Alexander">
     {% endblock %}
 
-    {% load static %}
-
     <title>{% block title %}{% endblock %}</title>
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block stylesheets %}{% endblock %}
 </head>
 <body>
     {% block navbar %}
-        {% include 'navbar.html' %}
+        {% include 'core_app/navbar.html' %}
     {% endblock %}
 
     <div class="content">

@@ -11,4 +11,17 @@ This file contains the CSS for the index.html template.
 /* License: CC BY-ND 4.0 */
 /* Copyright: Copyright (c) 2023 Nikolai Alexander */
 
-@import "./static/scss/_colorpallet.scss"
+@import "./static/scss/_colorpallet.scss";
+
+.index-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, $primary-color, $accent-color);
+}
+
+.professional-photo-container {
+
+}
