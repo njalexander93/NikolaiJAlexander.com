@@ -34,5 +34,11 @@ node_modules/
 package-lock.json
 **/css/
 
+# Ignore bootstrap-related files
+**/bootstrap*/
+bootstrap*.zip
+jquery*.js
+popper.min.js
+
 # Ignore any images in the local directory. These will be stored in AWS in the future.
 **/static/images/

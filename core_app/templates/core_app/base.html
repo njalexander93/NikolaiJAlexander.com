@@ -31,6 +31,7 @@ Typical Usage Example:
 
     <title>{% block title %}{% endblock %}</title>
 
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     {% block stylesheets %}{% endblock %}
 </head>
@@ -44,5 +45,11 @@ Typical Usage Example:
         {% comment %} Content specific to child templates {% endcomment %}
         {% endblock %}
     </div>
+
+    {% comment %} Javascript for Bootstrap {% endcomment %}
+    <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

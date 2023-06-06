@@ -71,17 +71,32 @@ python manage.py migrate
     brew install node
     ```
 
-6. Install node-sass:
+6. Install Bootstrap
+```shell
+curl -LOk https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
+unzip bootstrap-3.3.7-dist.zip -d ./core_app/static/
+```
+
+7. Install JQuery and Popper.js:
+```shell
+wget https://code.jquery.com/jquery-3.7.0.min.js
+mv jquery-3.7.0.min.js ./core_app/static/js/
+
+wget https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+mv popper.min.js ./core_app/static/js/
+```
+
+8. Install node-sass:
 ```shell
 sudo npm install -g node-sass
 ```
 
-7. Build the CSS files:
+1. Build the CSS files:
 ```shell
 npm run build-css
 ```
 
-8.  Run the development server:
+1.  Run the development server:
 ```shell
 python manage.py runserver
 ```
