@@ -17,6 +17,20 @@ Typical Usage Example:
 /* Copyright: Copyright (c) 2023 Nikolai Alexander */
 
 @import "./static/scss/_colorpallet.scss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
+
+
+$shadow-color: rgba(0, 53, 106, 0.5); // This is the RBG format of the primary color in _colorpallet.scss with 50% alpha
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to top, $primary-color, $accent-color);
+}
+
+h1, h2 {
+  color: $secondary-text-color;
+  text-shadow: 3px 3px 10px $shadow-color;
+}
 
 .index-wrapper {
     position: absolute;
@@ -24,27 +38,47 @@ Typical Usage Example:
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to top, $primary-color, $accent-color);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .professional-photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 0 20px 10px rgba(0, 53, 106, 0.5);
-    width: 500px;
-    height: 600px;
-    overflow: hidden;
-  }
+.title-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  #professional-photo {
-    margin-top: 5%;
-    height: 125%;
-    width: auto;
-    display: block;
-    border-radius: 50%;
-  }
+.title-container h1 {
+  font-size: 7.5rem;
+  text-align: right;
+}
+
+.header-container h2 {
+  white-space: nowrap;
+}
+
+.professional-photo-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 3px 3px 20px 10px $shadow-color;
+  height: 100%;
+  overflow: hidden;
+}
+
+.professional-photo-container::before {
+  content: "";
+  display: block;
+  padding-top: 120%; /* 6/5 ratio (height:width) */
+}
+
+#professional-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120%;
+  width: auto;
+  transform: translateX(-3%) translateY(-4%);
+}

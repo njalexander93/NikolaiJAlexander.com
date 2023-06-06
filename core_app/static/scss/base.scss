@@ -17,8 +17,10 @@ Typical Usage Example:
 /* Copyright: Copyright (c) 2023 Nikolai Alexander */
 
 @import "./static/scss/_colorpallet.scss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
 
 body {
-    background-color: $background-color;
+    font-family: 'Instrument Sans', sans-serif;
+    background: $background-color;
     color: $primary-text-color;
 }
