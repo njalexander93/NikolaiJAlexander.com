@@ -20,8 +20,27 @@ This file contains the CSS for the index.html template.
     height: 100%;
     width: 100%;
     background-image: linear-gradient(to top, $primary-color, $accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .professional-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    // border: 2px solid #000;
+    box-shadow: 0 0 20px 10px rgba(0, 53, 106, 0.5);
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+}
 
+#professional-photo {
+    margin-top: 5%;
+    height: 125%;
+    width: auto;
+    display: block;
+    border-radius: 50%;
 }
