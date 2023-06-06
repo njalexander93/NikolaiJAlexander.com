@@ -1,13 +1,18 @@
 /*
-CSS file for the index.html template
+SCSS file for the index.html template
 
 This file contains the CSS for the index.html template.
+
+Typical Usage Example:
+    1. Run `npm run build-index-css` to compile the css for the index.html template.
+    2. Run `npm run build-core-css` to compile the css for the core templates of the web pages.
+    3. Run `npm run build-css` to compile all of the css for the website.
 */
 
 /* Author: Nikolai Alexander */
 /* Email: njalexander93@gmail.com */
 /* Version: 1.0.0 */
-/* Date: 2023-06-04 */
+/* Date: TBD */
 /* License: CC BY-ND 4.0 */
 /* Copyright: Copyright (c) 2023 Nikolai Alexander */
 
@@ -23,24 +28,23 @@ This file contains the CSS for the index.html template.
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.professional-photo-container {
+  .professional-photo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    // border: 2px solid #000;
     box-shadow: 0 0 20px 10px rgba(0, 53, 106, 0.5);
     width: 500px;
     height: 600px;
     overflow: hidden;
-}
+  }
 
-#professional-photo {
+  #professional-photo {
     margin-top: 5%;
     height: 125%;
     width: auto;
     display: block;
     border-radius: 50%;
-}
+  }

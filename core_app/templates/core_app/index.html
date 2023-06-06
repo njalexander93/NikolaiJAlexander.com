@@ -1,4 +1,24 @@
+<!DOCTYPE html>
 {% extends 'core_app/base.html' %}
+
+{% comment %}
+Index template for the core app.
+
+This template extends the base template to create the index page of the website.
+
+Typical Usage Example:
+   1. Extend the base.html template to create the index page of the website.
+{% endcomment %}
+
+{% block versioning %}
+<meta name="author" content="Nikolai Alexander">
+<meta name="email" content="njalexander93@gmail.com">
+<meta name="version" content="1.0.0">
+<meta name="date" content="TBD">
+<meta name="license" content="CC BY-ND 4.0">
+<meta name="copyright" content="Copyright (c) 2023 Nikolai Alexander">
+{% endblock %}
+
 {% load static %}
 
 {% block title %}

@@ -14,7 +14,7 @@ from django.urls import path
 __author__ = "Nikolai Alexander"
 __email__ = "njalexander93@gmail.com"
 __version__ = "1.0.0"
-__date__ = "2023-06-03"
+__date__ = "TBD"
 __license__ = "CC BY-ND 4.0"
 __copyright__ = "Copyright (c) 2023 Nikolai Alexander"
 
