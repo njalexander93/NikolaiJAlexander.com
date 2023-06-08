@@ -27,9 +27,13 @@ body {
   background-image: linear-gradient(to top, $primary-color, $accent-color);
 }
 
-h1, h2 {
+h1, h2, a {
   color: $secondary-text-color;
   text-shadow: 3px 3px 10px $shadow-color;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard syntax */
 }
 
 .index-wrapper {
@@ -46,6 +50,7 @@ h1, h2 {
 .title-container {
   display: flex;
   justify-content: flex-end;
+  float: right;
 }
 
 .title-container h1 {
@@ -53,8 +58,26 @@ h1, h2 {
   text-align: right;
 }
 
+.header-container {
+  width: 100%;
+}
+
 .header-container h2 {
   white-space: nowrap;
+  text-align: right;
+  font-size: calc(0.8vw + 1em);
+}
+
+.links-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-container {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 10px 2px 10px;
 }
 
 .professional-photo-container {
