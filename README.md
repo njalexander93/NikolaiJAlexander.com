@@ -20,10 +20,10 @@ The NikolaiJAlexander.com website is built using the Django web framework. It in
 
 Before running this project, make sure you have the following requirements installed:
 
-- Python 3.10
+- Python 3.10.*
+- npm >=8.19.4
+- node-sass >=9.0.0
 - Django 4.2.1
-- npm 8.19.4
-- node-sass 9.0.0
 - Other dependencies listed in the [requirements.txt](requirements.txt) file
 
 To install the required dependencies, you can use pip:

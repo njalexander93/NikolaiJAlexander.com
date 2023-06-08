@@ -42,3 +42,6 @@ popper.min.js
 
 # Ignore any images in the local directory. These will be stored in AWS in the future.
 **/static/images/
+
+# Ignore all files compiles in staticfiles
+staticfiles/
