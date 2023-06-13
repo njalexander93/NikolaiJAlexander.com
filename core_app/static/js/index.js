@@ -11,6 +11,18 @@
 
 
 /**
+ * This helper function runs the photo fade-in animation.
+ * @return {void}
+ */
+function triggerPhotoLoadAnimationHelper(professionalPhotoContainer) {
+    return function() {
+        professionalPhotoContainer.style.opacity = "1";
+        professionalPhotoContainer.style.transform = "scale(1)";
+        professionalPhotoContainer.style.transition = "opacity  0.7s ease-in-out, transform 0.7s ease-in-out";
+    }
+}
+
+/**
  * This function triggers the Photo animation defined in index.css after the image is loaded.
  * @return {void}
  */
@@ -18,10 +30,12 @@ function triggerPhotoLoadAnimation () {
     var professionalPhoto = document.getElementById("professional-photo");
     var professionalPhotoContainer = document.getElementById("professional-photo-container");
 
-    // Add the "loaded" class to the professional-photo-container id to trigger the animation.
-    professionalPhoto.addEventListener("load", function() {
-        professionalPhotoContainer.classList.add("loaded");
-    });
+    professionalPhotoContainer.style.opacity = "0";
+    professionalPhotoContainer.style.transform = "scale(0.5)";
+
+    var loadAnimationHelper = triggerPhotoLoadAnimationHelper(professionalPhotoContainer);
+    professionalPhoto.addEventListener("load", loadAnimationHelper);
+    setTimeout(loadAnimationHelper, 300); // An extra initiator if the image is already loaded and the event listener above doesn't trigger.
 }
 
 
@@ -32,17 +46,6 @@ function triggerPhotoLoadAnimation () {
 function triggerTitleLoadAnimation () {
     var titleText = document.getElementById("title-header");
     titleText.classList.add("loaded");
-}
-
-
-/**
- * This function is the main function that orchestrates all of the load animations.
- * @return {void}
- */
-function triggerLoadAnimations() {
-    triggerPhotoLoadAnimation();
-
-    setTimeout(triggerTitleLoadAnimation, 500);
 }
 
 
@@ -98,10 +101,12 @@ function displayHeaderMessage() {
         "SAFe® Agile Scrum Master",
         "Inspiring Excellence and Empowering Teams"
     ]
+    var startIdx = Math.floor(Math.random() * headerList.length);
 
     // Initialize the first message.
     var headerMessage = document.getElementById("header-message");
-    headerMessage.innerText = headerList[0];
+    headerMessage.innerText = headerList[startIdx];
+    fadeInNextMessageHelper(headerMessage, headerList[startIdx])();
 
     // Rotate between the messages at an interval of 3 seconds between each message.
     var displayHelper = displayHeaderMessageHelper(headerMessage, headerList);
@@ -109,6 +114,17 @@ function displayHeaderMessage() {
 }
 
 
-window.addEventListener("DOMContentLoaded", triggerLoadAnimations);
+/**
+ * This function is the main function that orchestrates all of the load animations.
+ * @return {void}
+ */
+function triggerLoadAnimations() {
+    triggerPhotoLoadAnimation();
 
-displayHeaderMessage();
+    setTimeout(triggerTitleLoadAnimation, 500);
+
+    setTimeout(displayHeaderMessage, 1000);
+}
+
+
+window.addEventListener("DOMContentLoaded", triggerLoadAnimations);

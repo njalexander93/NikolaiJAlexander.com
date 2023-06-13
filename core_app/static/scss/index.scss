@@ -59,7 +59,7 @@ h1, h2, a {
   text-align: right;
   // Initialization for the fade-in animation
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateX(75%);
   transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out;
 }
 
@@ -76,6 +76,8 @@ h1, h2, a {
   white-space: nowrap;
   text-align: right;
   font-size: calc(0.8vw + 1em);
+  // Initialization for the fade-in animation
+  opacity: 0;
 }
 
 .links-wrapper {
@@ -121,22 +123,16 @@ h1, h2, a {
   box-shadow: 3px 3px 20px 10px $shadow-color;
   height: 100%;
   overflow: hidden;
-  // Initial parameters to enable loading animation
+  // // Initial parameters to enable loading animation
   opacity: 0; // For fade in
   transform: scale(0.5); // For growth
-  transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out; // Animation will occur over 1 second
+  // transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out; // Animation will occur over 1 second
 }
 
 .professional-photo-container::before {
   content: "";
   display: block;
   padding-top: 120%; /* 6/5 ratio (height:width) */
-}
-
-.professional-photo-container.loaded {
-  // Parameters set to the container when the image is fully loaded.
-  opacity: 1;
-  transform: scale(1);
 }
 
 #professional-photo {
