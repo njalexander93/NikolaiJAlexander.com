@@ -71,13 +71,15 @@ h1, h2, a {
 .links-wrapper {
   padding-top: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; // Center links horizontally
+  align-items: center; // Center links vertically
 }
 
 .link-container {
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center; // Center links vertically
+  justify-content: center;  // Center links horizontally
   padding: 10px 10px 2px 10px;
 }
 
@@ -91,15 +93,14 @@ h1, h2, a {
 .link-container a:hover {
   text-decoration: none;
   font-size: 30px;
-  transform: translate(-40px, -40px) !important;
+  transform: translate(-3px, -3px) !important;
 }
 
 .link-container a:active {
   font-size: 25px;
-  transform: translate(-20px, -20px) !important;
+  transform: translate(-0px, -0px) !important;
   transition: font-size 0.2s, transform 0.2s;
 }
-
 
 .professional-photo-container {
   position: relative;
@@ -110,12 +111,22 @@ h1, h2, a {
   box-shadow: 3px 3px 20px 10px $shadow-color;
   height: 100%;
   overflow: hidden;
+  // Initial parameters to enable loading animation
+  opacity: 0; // For fade in
+  transform: scale(0.5); // For growth
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; // Animation will occur over 1 second
 }
 
 .professional-photo-container::before {
   content: "";
   display: block;
   padding-top: 120%; /* 6/5 ratio (height:width) */
+}
+
+.professional-photo-container.loaded {
+  // Parameters set to the container when the image is fully loaded.
+  opacity: 1;
+  transform: scale(1);
 }
 
 #professional-photo {

@@ -43,7 +43,7 @@ Typical Usage Example:
                         </div>
                         <div class="row">
                             <div class="col-md-12 header-container">
-                                <h2>Passionate about DevOps and Resilient Solutions</h2>
+                                <h2 id="header-message"></h2>
                             </div>
                         </div>
                         <div class="row links-wrapper">
@@ -66,11 +66,15 @@ Typical Usage Example:
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="professional-photo-container">
+                <div class="professional-photo-container" id="professional-photo-container">
                     <img src="{% static 'images/professional_photo.png' %}" id="professional-photo" alt="Professional Photo">
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{%static 'js/index.js'%}"></script>
 {% endblock %}
