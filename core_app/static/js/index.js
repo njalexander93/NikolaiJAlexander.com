@@ -26,6 +26,27 @@ function triggerPhotoLoadAnimation () {
 
 
 /**
+ * This function triggers the title load animation.
+ * @return {void}
+ */
+function triggerTitleLoadAnimation () {
+    var titleText = document.getElementById("title-header");
+    titleText.classList.add("loaded");
+}
+
+
+/**
+ * This function is the main function that orchestrates all of the load animations.
+ * @return {void}
+ */
+function triggerLoadAnimations() {
+    triggerPhotoLoadAnimation();
+
+    setTimeout(triggerTitleLoadAnimation, 500);
+}
+
+
+/**
  * This function enables the fade-in animation for the next header message.
  * @param {HTMLElement} currentHeader - The current displayed header message.
  * @param {string} nextMessage - The next message to be displayed.
@@ -88,6 +109,6 @@ function displayHeaderMessage() {
 }
 
 
-window.addEventListener("DOMContentLoaded", triggerPhotoLoadAnimation);
+window.addEventListener("DOMContentLoaded", triggerLoadAnimations);
 
 displayHeaderMessage();

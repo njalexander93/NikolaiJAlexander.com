@@ -21,6 +21,7 @@ Typical Usage Example:
 
 
 $shadow-color: rgba(0, 53, 106, 0.5); // This is the RBG format of the primary color in _colorpallet.scss with 50% alpha
+$animation-speed: 0.7s; // Animation speed for all of the load animations.
 
 body {
   height: 100vh;
@@ -56,6 +57,15 @@ h1, h2, a {
 .title-container h1 {
   font-size: 7.5rem;
   text-align: right;
+  // Initialization for the fade-in animation
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out;
+}
+
+.title-container h1.loaded {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .header-container {
@@ -114,7 +124,7 @@ h1, h2, a {
   // Initial parameters to enable loading animation
   opacity: 0; // For fade in
   transform: scale(0.5); // For growth
-  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; // Animation will occur over 1 second
+  transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out; // Animation will occur over 1 second
 }
 
 .professional-photo-container::before {
