@@ -65,6 +65,10 @@ build_css:
 	@npm run build-css
 
 
+update_static: venv
+	@. venv/bin/activate && \
+		python manage.py collectstatic;
+
 # Run the server.
 runserver:
 	@. venv/bin/activate; \
