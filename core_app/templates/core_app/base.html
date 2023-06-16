@@ -40,11 +40,15 @@ Typical Usage Example:
         {% include 'core_app/navbar.html' %}
     {% endblock %}
 
-    <div class="content">
+    {% comment %} <div class="content"> {% endcomment %}
         {% block content %}
         {% comment %} Content specific to child templates {% endcomment %}
         {% endblock %}
-    </div>
+
+        {% block footer %}
+            {% include 'core_app/footer.html' %}
+        {% endblock %}
+    {% comment %} </div> {% endcomment %}
 
     {% comment %} Javascript for Bootstrap {% endcomment %}
     <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>

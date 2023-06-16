@@ -27,6 +27,13 @@ body {
   height: 100vh;
   background-image: linear-gradient(to top, $primary-color, $accent-color);
   background-color: $primary-color;
+  background-repeat: no-repeat;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 h1, h2, a {

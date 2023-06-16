@@ -75,6 +75,14 @@ Typical Usage Example:
 </div>
 {% endblock %}
 
+{% block footer %}
+<footer class="footer mt-auto py-3 bg-light" style="background-color: red;">
+<div class="container">
+    <h1> This is a footer </h1>
+</div>
+</footer>
+{% endblock %}
+
 {% block scripts %}
     <script src="{%static 'js/index.js'%}"></script>
 {% endblock %}
