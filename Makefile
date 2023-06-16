@@ -26,16 +26,21 @@ venv: install_python
 	fi
 
 
-# Install all of the requirements
-install_dependencies: install_python venv
+# Install all of the pip requirements
+install_requirements: venv
 	@. venv/bin/activate && \
-		pip install -r requirements.txt
+		pip install -r requirements.txt;
 
-	@sudo apt update
 
-	@echo "Installing nodejs and npm"
-	@sudo apt install nodejs npm
+# Install nodejs and Sass
+install_sass:
+	@sudo apt update; \
+		sudo apt install nodejs npm; \
+		sudo npm install -g node-sass;
 
+
+# Install Bootstrap and dependencies
+install_bootstrap:
 	@echo "Installing Boostrap."
 	@curl -LOk https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip; \
 		unzip bootstrap-3.3.7-dist.zip -d ./core_app/static/;
@@ -48,9 +53,9 @@ install_dependencies: install_python venv
 	@wget https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js; \
 		mv popper.min.js ./core_app/static/js/;
 
-	@echo "Installing Sass"
-	@sudo npm install -g node-sass
 
+# Install all of the dependencies to run the project.
+install_dependencies: install_python venv install_requirements install_bootstrap install_sass
 	@echo "Completed building all dependencies."
 
 
