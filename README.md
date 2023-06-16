@@ -38,24 +38,29 @@ To run the NikolaiJAlexander.com website locally, follow these steps:
 git clone https://github.com/njalexander93/NikolaiJAlexander.com.git
 ```
 
-2. Create and activate a virtual environment:
+2. If you are running on Ubuntu 20.4 or greater, you can skip the remaining steps by running the following command:
 ```shell
-python3 -m venv myenv
-source myenv/bin/activate
+make all
 ```
 
-3. Install the project dependencies:
+3. Create and activate a virtual environment:
+```shell
+python3 -m venv venv
+source mvenv/bin/activate
+```
+
+4. Install the project dependencies:
 ```shell
 cd NikolaiJAlexander.com
 pip install -r requirements.txt
 ```
 
-4. Perform initial database migrations:
+5. Perform initial database migrations:
 ```shell
 python manage.py migrate
 ```
 
-5. Install Node.js and npm:
+6. Install Node.js and npm:
   - For Debian/Ubuntu-based systems:
     ```shell
     sudo apt update
@@ -71,13 +76,13 @@ python manage.py migrate
     brew install node
     ```
 
-6. Install Bootstrap
+7. Install Bootstrap
 ```shell
 curl -LOk https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip -d ./core_app/static/
 ```
 
-7. Install JQuery and Popper.js:
+8. Install JQuery and Popper.js:
 ```shell
 wget https://code.jquery.com/jquery-3.7.0.min.js
 mv jquery-3.7.0.min.js ./core_app/static/js/
@@ -86,17 +91,17 @@ wget https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
 mv popper.min.js ./core_app/static/js/
 ```
 
-8. Install node-sass:
+9. Install node-sass:
 ```shell
 sudo npm install -g node-sass
 ```
 
-1. Build the CSS files:
+10. Build the CSS files:
 ```shell
 npm run build-css
 ```
 
-1.  Run the development server:
+11.  Run the development server:
 ```shell
 python manage.py runserver
 ```
