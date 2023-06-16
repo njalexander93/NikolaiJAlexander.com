@@ -26,6 +26,7 @@ $animation-speed: 0.7s; // Animation speed for all of the load animations.
 body {
   height: 100vh;
   background-image: linear-gradient(to top, $primary-color, $accent-color);
+  background-color: $primary-color;
 }
 
 h1, h2, a {
@@ -99,7 +100,9 @@ h1, h2, a {
   color: $secondary-text-color;
   text-shadow: 3px 3px 10px $shadow-color;
   font-size: 20px;
-  transition: font-size 0.5s, transform 0.5s;
+  transition: opacity 1.5s, font-size 0.5s, transform 0.5s;
+  // Initialization for fade-in animations
+  opacity: 0;
 }
 
 .link-container a:hover {

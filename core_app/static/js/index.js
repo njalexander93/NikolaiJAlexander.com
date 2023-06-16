@@ -22,6 +22,7 @@ function triggerPhotoLoadAnimationHelper(professionalPhotoContainer) {
     }
 }
 
+
 /**
  * This function triggers the Photo animation defined in index.css after the image is loaded.
  * @return {void}
@@ -35,7 +36,7 @@ function triggerPhotoLoadAnimation () {
 
     var loadAnimationHelper = triggerPhotoLoadAnimationHelper(professionalPhotoContainer);
     professionalPhoto.addEventListener("load", loadAnimationHelper);
-    setTimeout(loadAnimationHelper, 300); // An extra initiator if the image is already loaded and the event listener above doesn't trigger.
+    setTimeout(loadAnimationHelper, 1000); // An extra initiator if the image is already loaded and the event listener above doesn't trigger.
 }
 
 
@@ -115,15 +116,50 @@ function displayHeaderMessage() {
 
 
 /**
+ * This helper function runs the link loading animation
+ * @return {void}
+ */
+function triggerLinkLoadAnimationHelper(linkId) {
+    return function() {
+        linkId.style.opacity = "1";
+    }
+}
+
+
+/**
+ * This function loads the links into display.
+ * @return {void}
+ */
+function triggerLinksLoadAnimation() {
+    var idList = [
+        "about-link",
+        "experience-link",
+        "education-link",
+        "skills-link"
+    ]
+
+    for (var i = 0; i < idList.length; i++) {
+        var linkId = document.getElementById(idList[i]);
+
+        linkId.style.opacity = "0";
+
+        var linkLoadAnimation = triggerLinkLoadAnimationHelper(linkId);
+        setTimeout(linkLoadAnimation, 350*i);
+    }
+}
+
+/**
  * This function is the main function that orchestrates all of the load animations.
  * @return {void}
  */
 function triggerLoadAnimations() {
     triggerPhotoLoadAnimation();
 
-    setTimeout(triggerTitleLoadAnimation, 500);
+    setTimeout(triggerTitleLoadAnimation, 1500);
 
-    setTimeout(displayHeaderMessage, 1000);
+    setTimeout(displayHeaderMessage, 2250);
+
+    setTimeout(triggerLinksLoadAnimation, 3000);
 }
 
 
