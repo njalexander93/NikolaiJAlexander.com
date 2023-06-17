@@ -65,9 +65,17 @@ build_css:
 	@npm run build-css
 
 
+# Update static files
 update_static: venv
 	@. venv/bin/activate && \
 		python manage.py collectstatic;
+
+
+# Update Django database
+migrate:
+	@. venv/bin/activate && \
+		python manage.py migrate;
+
 
 # Run the server.
 runserver:

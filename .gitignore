@@ -45,3 +45,7 @@ popper.min.js
 
 # Ignore all files compiles in staticfiles
 staticfiles/
+
+#Ignore VSCode stuff
+settings.json
+extensions.txt
