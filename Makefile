@@ -1,4 +1,5 @@
 PYTHON=python3.10
+VENV=venv/bin/activate
 
 # Install Python 3.10.
 install_python:
@@ -20,7 +21,7 @@ venv: install_python
 	@if [ ! -d "venv" ]; then \
 		echo "Virtual environment not initialized. Creating venv environment."; \
 		$(PYTHON) -m venv venv; \
-		chmod +x venv/bin/activate; \
+		chmod +x ${VENV}; \
 	else \
 		echo "venv virtual environment already exists."; \
 	fi
@@ -28,15 +29,8 @@ venv: install_python
 
 # Install all of the pip requirements
 install_requirements: venv
-	@. venv/bin/activate && \
+	@. ${VENV} && \
 		pip install -r requirements.txt;
-
-
-# Install nodejs and Sass
-install_sass:
-	@sudo apt update; \
-		sudo apt install nodejs npm; \
-		sudo npm install -g node-sass;
 
 
 # Install Bootstrap and dependencies
@@ -54,8 +48,26 @@ install_bootstrap:
 		mv popper.min.js ./core_app/static/js/;
 
 
+# Instal nodejs
+install_npm:
+	@sudo apt update; \
+		sudo apt install nodejs npm;
+
+
+# Install Sass
+install_sass: install_npm
+	@sudo npm install -g node-sass;
+
+
+# Install all linters for JS, HTML, and CSS
+install_linters: install_npm
+	@sudo npm install --save-dev eslint eslint-config-google; \
+		sudo npm install --save-dev htmlhint; \
+		sudo npm install --save-dev stylelint;
+
+
 # Install all of the dependencies to run the project.
-install_dependencies: install_python venv install_requirements install_bootstrap install_sass
+install_dependencies: install_python venv install_requirements install_bootstrap install_npm install_sass install_linters
 	@echo "Completed building all dependencies."
 
 
@@ -67,20 +79,39 @@ build_css:
 
 # Update static files
 update_static: venv
-	@. venv/bin/activate && \
+	@. ${VENV} && \
 		python manage.py collectstatic;
 
 
 # Update Django database
 migrate:
-	@. venv/bin/activate && \
+	@. ${VENV} && \
 		python manage.py migrate;
 
 
 # Run the server.
 runserver:
-	@. venv/bin/activate; \
-		python manage.py runserver
+	@. ${VENV}; \
+		python manage.py runserver;
 
 
-all: install_python venv install_dependencies build_css runserver
+pylint:
+	@echo "Running PyLint on Python code.";
+	@. ${VENV}; \
+		pylint ./**/*.py;
+
+
+eslint:
+	@echo "Running ESLint on Javascript code.";
+	@npx eslint . --ext .js;
+
+
+htmlhint:
+	@echo "Running HTMLHint on HTML code.";
+	@npx htmlhint --config ./.htmlhintrc --ignore="**/venv/**";
+
+
+lint: pylint eslint htmlhint
+
+
+all: install_python venv install_dependencies build_css update_static migrate runserver

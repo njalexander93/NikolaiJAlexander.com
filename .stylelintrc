@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-google",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {}
+}

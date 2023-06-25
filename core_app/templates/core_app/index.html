@@ -38,27 +38,27 @@ Typical Usage Example:
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8 title-container">
-                                <h1 id="title-header"><strong>Nikolai J. Alexander</strong></h1>
+                                <h1 class="unselectable" id="title-header"><strong>Nikolai J. Alexander</strong></h1>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 header-container">
-                                <h2 id="header-message"></h2>
+                                <h2 class="unselectable" id="header-message"></h2>
                             </div>
                         </div>
                         <div class="row">
                             <div class="cold-md-12 links-wrapper" id="links-wrapper">
                                 <div class="link-container">
-                                    <a id="about-link">About Me</a>
+                                    <a class="unselectable" id="about-link">About Me</a>
                                 </div>
                                 <div class="link-container">
-                                    <a id="experience-link">Experience</a>
+                                    <a class="unselectable" id="experience-link">Experience</a>
                                 </div>
                                 <div class="link-container">
-                                    <a id="education-link">Education</a>
+                                    <a class="unselectable" id="education-link">Education</a>
                                 </div>
                                 <div class="link-container">
-                                    <a id="skills-link">Skills</a>
+                                    <a class="unselectable" id="skills-link">Skills</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ Typical Usage Example:
             </div>
             <div class="col-md-5">
                 <div class="professional-photo-container" id="professional-photo-container">
-                    <img src="https://nikolaijalexander-website-images.s3.us-west-2.amazonaws.com/professional_photo.png" id="professional-photo" alt="Professional Photo">
+                    <img src="https://nikolaijalexanderpublic.blob.core.windows.net/nikolaijalexander-images-public/professional_photo.png" id="professional-photo" alt="Professional Photo">
                 </div>
             </div>
         </div>
@@ -80,16 +80,21 @@ Typical Usage Example:
     <div class="row">
         <div class="col-md-12">
             <div class="footer-link-container">
-                <a id="github-link"><img src="https://nikolaijalexander-website-images.s3.us-west-2.amazonaws.com/GitHub_Logo_White.png" id="github-logo" alt="Github Logo"></a>
+                <a id="github-link" class="footer-link">
+                    <img src="https://nikolaijalexanderpublic.blob.core.windows.net/nikolaijalexander-images-public/GitHub_Logo_White.png" id="github-logo" alt="Github Logo">
+                </a>
             </div>
             <div class="footer-link-container">
-                <a id="linkedin-link"><img src="https://nikolaijalexander-website-images.s3.us-west-2.amazonaws.com/linkedin-logo-white-1982192288" id="linkedin-logo" alt="LinkedIn Logo"></a>
+                <a id="linkedin-link" class="footer-link">
+                    <img src="https://nikolaijalexanderpublic.blob.core.windows.net/nikolaijalexander-images-public/linkedin-logo-white-1982192288" id="linkedin-logo" alt="LinkedIn Logo">
+                </a>
             </div>
             <div class="footer-link-container">
-                <a id="site-link">About this Site</a>
+                <a id="site-link" class="footer-link">About this Site</a>
             </div>
             <div class="footer-link-container">
-                <a id="contact-link">Contact Me</a>
+                <a id="contact-link" class="footer-link">Contact Me</a>
+            </div>
         </div>
     </div>
 </footer>

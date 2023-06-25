@@ -1,0 +1,6 @@
+venv/
+node_modules/
+staticfiles/
+**/bootstrap*
+**/jquery*.js
+**/popper*.js

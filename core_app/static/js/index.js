@@ -1,5 +1,5 @@
 /**
- * @fileoverview This contains the javascript logic for the index.html page
+ * This contains the javascript logic for the index.html page
  *
  * @author Nikolai Alexander
  * @email njalexander93@gmail.com
@@ -12,6 +12,7 @@
 
 /**
  * This helper function runs the photo fade-in animation.
+ * @param {HTMLElement} professionalPhotoContainer - The container element from the HTML that is being modified.
  * @return {void}
  */
 function triggerPhotoLoadAnimationHelper(professionalPhotoContainer) {
@@ -19,7 +20,7 @@ function triggerPhotoLoadAnimationHelper(professionalPhotoContainer) {
         professionalPhotoContainer.style.opacity = "1";
         professionalPhotoContainer.style.transform = "scale(1)";
         professionalPhotoContainer.style.transition = "opacity  0.7s ease-in-out, transform 0.7s ease-in-out";
-    }
+    };
 }
 
 
@@ -27,14 +28,14 @@ function triggerPhotoLoadAnimationHelper(professionalPhotoContainer) {
  * This function triggers the Photo animation defined in index.css after the image is loaded.
  * @return {void}
  */
-function triggerPhotoLoadAnimation () {
-    var professionalPhoto = document.getElementById("professional-photo");
-    var professionalPhotoContainer = document.getElementById("professional-photo-container");
+function triggerPhotoLoadAnimation() {
+    const professionalPhoto = document.getElementById("professional-photo");
+    const professionalPhotoContainer = document.getElementById("professional-photo-container");
 
     professionalPhotoContainer.style.opacity = "0";
     professionalPhotoContainer.style.transform = "scale(0.5)";
 
-    var loadAnimationHelper = triggerPhotoLoadAnimationHelper(professionalPhotoContainer);
+    const loadAnimationHelper = triggerPhotoLoadAnimationHelper(professionalPhotoContainer);
     professionalPhoto.addEventListener("load", loadAnimationHelper);
     setTimeout(loadAnimationHelper, 1000); // An extra initiator if the image is already loaded and the event listener above doesn't trigger.
 }
@@ -44,8 +45,8 @@ function triggerPhotoLoadAnimation () {
  * This function triggers the title load animation.
  * @return {void}
  */
-function triggerTitleLoadAnimation () {
-    var titleText = document.getElementById("title-header");
+function triggerTitleLoadAnimation() {
+    const titleText = document.getElementById("title-header");
     titleText.classList.add("loaded");
 }
 
@@ -63,7 +64,7 @@ function fadeInNextMessageHelper(currentHeader, nextMessage) {
 
         currentHeader.style.opacity = 1;
         currentHeader.style.transition = "opacity 1s ease";
-    }
+    };
 }
 
 
@@ -75,20 +76,20 @@ function fadeInNextMessageHelper(currentHeader, nextMessage) {
  */
 function displayHeaderMessageHelper(currentHeader, headerList) {
     return function() {
-        var currentMessage = currentHeader.innerText;
-        var currentIdx = headerList.indexOf(currentMessage);
+        const currentMessage = currentHeader.innerText;
+        const currentIdx = headerList.indexOf(currentMessage);
 
         // Queue up the next message.
-        var nextIdx = (currentIdx + 1) % headerList.length;
-        var nextMessage = headerList[nextIdx];
+        const nextIdx = (currentIdx + 1) % headerList.length;
+        const nextMessage = headerList[nextIdx];
 
         // Fade out the current message.
         currentHeader.style.opacity = 0;
         currentHeader.style.transition = "opacity 0.5s ease";
 
-        var fadeInHelper = fadeInNextMessageHelper(currentHeader, nextMessage);
+        const fadeInHelper = fadeInNextMessageHelper(currentHeader, nextMessage);
         setTimeout(fadeInHelper, 700);
-    }
+    };
 }
 
 
@@ -97,32 +98,33 @@ function displayHeaderMessageHelper(currentHeader, headerList) {
  * @return {void}
  */
 function displayHeaderMessage() {
-    var headerList = [
+    const headerList = [
         "Passionate about DevOps and Resilient Solutions",
         "SAFe® Agile Scrum Master",
-        "Inspiring Excellence and Empowering Teams"
-    ]
-    var startIdx = Math.floor(Math.random() * headerList.length);
+        "Inspiring Excellence and Empowering Teams",
+    ];
+    const startIdx = Math.floor(Math.random() * headerList.length);
 
     // Initialize the first message.
-    var headerMessage = document.getElementById("header-message");
+    const headerMessage = document.getElementById("header-message");
     headerMessage.innerText = headerList[startIdx];
     fadeInNextMessageHelper(headerMessage, headerList[startIdx])();
 
     // Rotate between the messages at an interval of 3 seconds between each message.
-    var displayHelper = displayHeaderMessageHelper(headerMessage, headerList);
-    setInterval(displayHelper, 5000)
+    const displayHelper = displayHeaderMessageHelper(headerMessage, headerList);
+    setInterval(displayHelper, 5000);
 }
 
 
 /**
  * This helper function runs the link loading animation
+ * @param {HTMLElement} linkId - The link element from the HTML that is being modified.
  * @return {void}
  */
 function triggerLinkLoadAnimationHelper(linkId) {
     return function() {
         linkId.style.opacity = "1";
-    }
+    };
 }
 
 
@@ -131,19 +133,19 @@ function triggerLinkLoadAnimationHelper(linkId) {
  * @return {void}
  */
 function triggerLinksLoadAnimation() {
-    var idList = [
+    const idList = [
         "about-link",
         "experience-link",
         "education-link",
-        "skills-link"
-    ]
+        "skills-link",
+    ];
 
-    for (var i = 0; i < idList.length; i++) {
-        var linkId = document.getElementById(idList[i]);
+    for (let i = 0; i < idList.length; i++) {
+        const linkId = document.getElementById(idList[i]);
 
         linkId.style.opacity = "0";
 
-        var linkLoadAnimation = triggerLinkLoadAnimationHelper(linkId);
+        const linkLoadAnimation = triggerLinkLoadAnimationHelper(linkId);
         setTimeout(linkLoadAnimation, 350*i);
     }
 }

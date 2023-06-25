@@ -39,10 +39,6 @@ footer {
 h1, h2, a {
   color: $secondary-text-color;
   text-shadow: 3px 3px 10px $shadow-color;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard syntax */
 }
 
 .index-wrapper {
@@ -152,4 +148,31 @@ h1, h2, a {
   height: 120%;
   width: auto;
   transform: translateX(-3%) translateY(-4%);
+}
+
+.footer-link-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-link-container:last-child {
+  margin-right: 0;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footer-link img {
+  height: 20px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.footer-link-container a {
+  display: flex;
+  align-items: center;
+  height: 30px;
 }

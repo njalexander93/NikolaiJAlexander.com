@@ -1,0 +1,21 @@
+[pylint]
+# Enable/disable certain message categories (optional)
+# disable=missing-docstring, invalid-name, unused-import, too-many-instance-attributes, too-few-public-methods, duplicate-code
+disable=duplicate-code
+
+# Configure variable naming conventions (optional)
+[pylint.messages control]
+# Good: my_variable_name
+# Bad: MyVariableName
+variable-rgx=[a-z_][a-z0-9_]{1,30}$
+# Set the maximum line length
+max-line-length=120
+
+[pylint.'design']
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+method-rgx=[a-z_][a-z0-9_]{1,30}$
+
+[MASTER]
+load-plugins=pylint_django
+django-settings-module=resume_project.settings
+ignore=templates, static

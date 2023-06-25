@@ -14,13 +14,13 @@ Typical Usage Examples:
 
         This will return a rendered response for the home page.
 """
+
 __author__ = "Nikolai Alexander"
 __email__ = "njalexander93@gmail.com"
 __version__ = "1.0.0"
 __date__ = "TBD"
 __license__ = "CC BY-ND 4.0"
 __copyright__ = "Copyright (c) 2023 Nikolai Alexander"
-
 
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
