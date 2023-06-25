@@ -63,7 +63,7 @@ install_sass: install_npm
 install_linters: install_npm
 	@sudo npm install --save-dev eslint eslint-config-google; \
 		sudo npm install --save-dev htmlhint; \
-		sudo npm install --save-dev stylelint;
+		sudo npm install --save-dev stylelint stylelint-config-standard stylelint-scss postcss-scss;
 
 
 # Install all of the dependencies to run the project.
@@ -99,19 +99,28 @@ pylint:
 	@echo "Running PyLint on Python code.";
 	@. ${VENV}; \
 		pylint ./**/*.py;
+	@echo "Python linting was successful!"
 
 
 eslint:
 	@echo "Running ESLint on Javascript code.";
 	@npx eslint . --ext .js;
+	@echo "Javascript linting was successful!"
 
 
 htmlhint:
 	@echo "Running HTMLHint on HTML code.";
 	@npx htmlhint --config ./.htmlhintrc --ignore="**/venv/**";
+	@echo "HTML linting was successful!"
 
 
-lint: pylint eslint htmlhint
+stylelint:
+	@echo "Running StyleLint on SCSS code.";
+	@npx stylelint ./**/*.scss;
+	@echo "CSS linting was successful!"
+
+
+lint: pylint eslint htmlhint stylelint
 
 
 all: install_python venv install_dependencies build_css update_static migrate runserver

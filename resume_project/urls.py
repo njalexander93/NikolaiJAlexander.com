@@ -3,7 +3,7 @@
 This module handles the URL configuration for the nikolaijalexander.com website.
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 
 
 __author__ = "Nikolai Alexander"

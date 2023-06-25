@@ -7,21 +7,22 @@ Typical Usage Example:
     1. Run `npm run build-index-css` to compile the css for the index.html template.
     2. Run `npm run build-core-css` to compile the css for the core templates of the web pages.
     3. Run `npm run build-css` to compile all of the css for the website.
+
+
+Author: Nikolai Alexander
+Email: njalexander93@gmail.com
+Version: 1.0.0
+Date: TBD
+License: CC BY-ND 4.0
+Copyright: Copyright (c) 2023 Nikolai Alexander
 */
 
-/* Author: Nikolai Alexander */
-/* Email: njalexander93@gmail.com */
-/* Version: 1.0.0 */
-/* Date: TBD */
-/* License: CC BY-ND 4.0 */
-/* Copyright: Copyright (c) 2023 Nikolai Alexander */
-
-@import "./static/scss/_colorpallet.scss";
+@import './static/scss/_colorpallet.scss';
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
 
 
-$shadow-color: rgba(0, 53, 106, 0.5); // This is the RBG format of the primary color in _colorpallet.scss with 50% alpha
-$animation-speed: 0.7s; // Animation speed for all of the load animations.
+$shadow-color: rgba(0, 53, 106, 0.5); /* This is the RBG format of the primary color in _colorpallet.scss with 50% alpha */
+$animation-speed: 0.7s; /* Animation speed for all of the load animations. */
 
 body {
   height: 100vh;
@@ -61,7 +62,7 @@ h1, h2, a {
 .title-container h1 {
   font-size: 7.5rem;
   text-align: right;
-  // Initialization for the fade-in animation
+  /* Initialization for the fade-in animation */
   opacity: 0;
   transform: translateX(75%);
   transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out;
@@ -80,23 +81,42 @@ h1, h2, a {
   white-space: nowrap;
   text-align: right;
   font-size: calc(0.8vw + 1em);
-  // Initialization for the fade-in animation
+  /* Initialization for the fade-in animation */
   opacity: 0;
 }
 
 .links-wrapper {
   padding-top: 15px;
   display: flex;
-  justify-content: center; // Center links horizontally
-  align-items: center; // Center links vertically
+  justify-content: center; /* Center links horizontally */
+  align-items: center; /* Center links vertically */
 }
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footer-link img {
+  height: 20px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.footer-link-container a {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
 
 .link-container {
   text-align: center;
   display: inline-flex;
-  align-items: center; // Center links vertically
-  justify-content: center;  // Center links horizontally
-  padding: 10px 10px 2px 10px;
+  justify-content: center; /* Center links horizontally */
+  align-items: center; /* Center links vertically */
+  padding: 10px 10px 2px;
 }
 
 .link-container a, a:focus {
@@ -104,7 +124,7 @@ h1, h2, a {
   text-shadow: 3px 3px 10px $shadow-color;
   font-size: 20px;
   transition: opacity 1.5s, font-size 0.5s, transform 0.5s;
-  // Initialization for fade-in animations
+  /* Initialization for the fade-in animation */
   opacity: 0;
 }
 
@@ -116,7 +136,6 @@ h1, h2, a {
 
 .link-container a:active {
   font-size: 25px;
-  transform: translate(-0px, -0px) !important;
   transition: font-size 0.2s, transform 0.2s;
 }
 
@@ -129,10 +148,10 @@ h1, h2, a {
   box-shadow: 3px 3px 20px 10px $shadow-color;
   height: 100%;
   overflow: hidden;
-  // // Initial parameters to enable loading animation
-  opacity: 0; // For fade in
-  transform: scale(0.5); // For growth
-  // transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out; // Animation will occur over 1 second
+  /* Initial parameters to enable loading animation */
+  opacity: 0; /* For fade in */
+  transform: scale(0.5);  /* For growth */
+  transition: opacity $animation-speed ease-in-out, transform $animation-speed ease-in-out; /* Animation will occur over 1 second */
 }
 
 .professional-photo-container::before {
@@ -157,22 +176,4 @@ h1, h2, a {
 
 .footer-link-container:last-child {
   margin-right: 0;
-}
-
-.footer-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.footer-link img {
-  height: 20px;
-  width: auto;
-  margin-right: 5px;
-}
-
-.footer-link-container a {
-  display: flex;
-  align-items: center;
-  height: 30px;
 }

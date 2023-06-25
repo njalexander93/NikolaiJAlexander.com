@@ -27,3 +27,5 @@ class CoreAppConfig(AppConfig):
     """
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'core_app'
+
+#Function for adding two numbers

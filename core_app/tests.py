@@ -1,7 +1,7 @@
 """
 Test module for the core_app.
 
-This module defines the tests cases for testing the core_app.
+This module defines the tests for the core_app of the Nikolaijalexander.com website.
 
 Typical Usage Examples:
 
@@ -14,6 +14,6 @@ __date__ = "TBD"
 __license__ = "CC BY-ND 4.0"
 __copyright__ = "Copyright (c) 2023 Nikolai Alexander"
 
-from django.test import TestCase
+# from django.test import TestCase
 
 # Create your tests here.

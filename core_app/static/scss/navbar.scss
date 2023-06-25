@@ -7,13 +7,14 @@ Typical Usage Example:
     1. Run `npm run build-navbar-css` to compile the css for the navbar.html template.
     2. Run `npm run build-core-css` to compile the css for the core templates of the web pages.
     3. Run `npm run build-css` to compile all of the css for the website.
+
+
+Author: Nikolai Alexander
+Email: njalexander93@gmail.com
+Version: 1.0.0
+Date: TBD
+License: CC BY-ND 4.0
+Copyright: Copyright (c) 2023 Nikolai Alexander
 */
 
-/* Author: Nikolai Alexander */
-/* Email: njalexander93@gmail.com */
-/* Version: 1.0.0 */
-/* Date: TBD */
-/* License: CC BY-ND 4.0 */
-/* Copyright: Copyright (c) 2023 Nikolai Alexander */
-
-@import "./static/scss/_colorpallet.scss"
+@import url('./static/scss/_colorpallet.scss')

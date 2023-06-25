@@ -1,7 +1,14 @@
 {
-  "extends": "stylelint-config-google",
+  "extends": "stylelint-config-standard",
   "plugins": [
     "stylelint-scss"
   ],
-  "rules": {}
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "comment-empty-line-before": null,
+    "import-notation": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null
+  }
 }
