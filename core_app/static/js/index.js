@@ -150,6 +150,19 @@ function triggerLinksLoadAnimation() {
     }
 }
 
+
+/**
+ * This function loads the footer links into display.
+ * @return {void}
+ */
+function triggerFooterLinkLoadAnimation() {
+    const footerLinks = document.getElementById("footer-links");
+
+    footerLinks.style.opacity = 1;
+    footerLinks.style.transition = "opacity 1s ease";
+}
+
+
 /**
  * This function is the main function that orchestrates all of the load animations.
  * @return {void}
@@ -162,6 +175,8 @@ function triggerLoadAnimations() {
     setTimeout(displayHeaderMessage, 2250);
 
     setTimeout(triggerLinksLoadAnimation, 3000);
+
+    setTimeout(triggerFooterLinkLoadAnimation, 4500);
 }
 
 

@@ -37,7 +37,13 @@ footer {
   width: 100%;
 }
 
-h1, h2, a {
+h1, h2, a, a:focus {
+  color: $secondary-text-color;
+  text-shadow: 3px 3px 10px $shadow-color;
+}
+
+a:hover {
+  text-decoration: none;
   color: $secondary-text-color;
   text-shadow: 3px 3px 10px $shadow-color;
 }
@@ -92,6 +98,50 @@ h1, h2, a {
   align-items: center; /* Center links vertically */
 }
 
+.footer-link-wrapper {
+  display: flex;
+  justify-content: center; /* Center links horizontally */
+  align-items: center; /* Center links vertically */
+  flex-wrap: wrap;
+  padding: 10px 10px 2px;
+  opacity: 0;
+}
+
+.footer-link-container a{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: font-size 0.25s;
+}
+
+.link-container a, .link-container a:focus {
+  color: $secondary-text-color;
+  text-shadow: 3px 3px 10px $shadow-color;
+  font-size: 20px;
+  transition: opacity 1.5s, font-size 0.5s, transform 0.5s;
+  /* Initialization for the fade-in animation */
+  opacity: 0;
+}
+
+.footer-link-container a:visited, .footer-link-container a:focus {
+  font-size: 16px;
+  opacity: 1;
+}
+
+.footer-link-container a:focus-within {
+  font-size: 16px;
+}
+
+.footer-link-container a:hover {
+  font-size: 20px;
+  transition: font-size 0.5s;
+}
+
+.footer-link-container a:active {
+  font-size: 18px;
+  transition: font-size 0.2s;
+}
+
 .footer-link {
   display: flex;
   align-items: center;
@@ -104,12 +154,20 @@ h1, h2, a {
   margin-right: 5px;
 }
 
-.footer-link-container a {
-  display: flex;
-  align-items: center;
-  height: 30px;
+.footer-link img:hover {
+  height: 26px;
+  transition: height 0.5s;
 }
 
+.footer-link img:active {
+  height: 23px;
+  transition: height 0.2s;
+}
+
+.footer-link img:focus, .footer-link img:visited {
+  height: 20px;
+  opacity: 1;
+}
 
 .link-container {
   text-align: center;
@@ -119,17 +177,7 @@ h1, h2, a {
   padding: 10px 10px 2px;
 }
 
-.link-container a, a:focus {
-  color: $secondary-text-color;
-  text-shadow: 3px 3px 10px $shadow-color;
-  font-size: 20px;
-  transition: opacity 1.5s, font-size 0.5s, transform 0.5s;
-  /* Initialization for the fade-in animation */
-  opacity: 0;
-}
-
 .link-container a:hover {
-  text-decoration: none;
   font-size: 30px;
   transform: translate(-3px, -3px) !important;
 }
